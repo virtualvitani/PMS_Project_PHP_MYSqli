@@ -1,0 +1,2 @@
+sudo mkdir PMS_Project_PHP_MYSqli
+sudo chown virtualvitani:virtualvitani /var/www/PMS_Project_PHP_MYSqli/
