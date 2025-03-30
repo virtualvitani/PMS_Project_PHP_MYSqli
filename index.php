@@ -24,7 +24,8 @@ $arrivals = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Reception Operations</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="assets/styles.css">
     </head>
     <body>
     <div class="page-wrapper d-flex h-100">
@@ -39,7 +40,7 @@ $arrivals = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
             <a href="#" class="nav-link active" aria-current="page">
-            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+            <i class="bi bi-house"></i>
             Home
             </a>
         </li>
@@ -54,7 +55,7 @@ $arrivals = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <hr>
 
     <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="#" class="d-flex p-1 align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://avatars.githubusercontent.com/u/54596779?v=4" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong>Virtual_Vitani</strong>
         </a>
@@ -69,7 +70,7 @@ $arrivals = mysqli_fetch_all($result, MYSQLI_ASSOC);
     </div>
     </aside>
 
-    <div class="content flex-grow-1">
+    <div class="content d-flex flex-column flex-grow-1">
         <header class="p-3 text-bg-dark">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -97,47 +98,47 @@ $arrivals = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </div>
         </header>
 
-    <div class="container my-5">
-    <h1>Arrivals</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Arrival Date</th>
-                <th>Reservation Number</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Room Type</th>
-                <th>Room</th>
-                <th>Guests</th>
-                <th>Departure Date</th>
-                <th>Agency</th>
-                <th>Note</th>
-                <th>Package</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($arrivals as $arrival): ?>
+    <main class="container my-3 d-flex flex-column flex-grow-1">
+        <h1>Arrivals</h1>
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td><?= $arrival['id'] ?></td>
-                    <td><?= $arrival['calendar_date'] ?></td>
-                    <td><?= $arrival['reservation_number'] ?></td>
-                    <td><?= $arrival['first_name'] ?></td>
-                    <td><?= $arrival['last_name'] ?></td>
-                    <td><?= $arrival['room_type'] ?></td>
-                    <td><?= $arrival['room'] ?></td>
-                    <td><?= $arrival['guests'] ?></td>
-                    <td><?= $arrival['departure_date'] ?></td>
-                    <td><?= $arrival['agency'] ?></td>
-                    <td><?= $arrival['note'] ?></td>
-                    <td><?= $arrival['package'] ?></td>
-                    <td><?= $arrival['price'] ?></td>
+                    <th>Id</th>
+                    <th>Arrival Date</th>
+                    <th>Reservation Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Room Type</th>
+                    <th>Room</th>
+                    <th>Guests</th>
+                    <th>Departure Date</th>
+                    <th>Agency</th>
+                    <th>Note</th>
+                    <th>Package</th>
+                    <th>Price</th>
                 </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
-    </div>
+            </thead>
+            <tbody>
+                <?php foreach ($arrivals as $arrival): ?>
+                    <tr>
+                        <td><?= $arrival['id'] ?></td>
+                        <td><?= $arrival['calendar_date'] ?></td>
+                        <td><?= $arrival['reservation_number'] ?></td>
+                        <td><?= $arrival['first_name'] ?></td>
+                        <td><?= $arrival['last_name'] ?></td>
+                        <td><?= $arrival['room_type'] ?></td>
+                        <td><?= $arrival['room'] ?></td>
+                        <td><?= $arrival['guests'] ?></td>
+                        <td><?= $arrival['departure_date'] ?></td>
+                        <td><?= $arrival['agency'] ?></td>
+                        <td><?= $arrival['note'] ?></td>
+                        <td><?= $arrival['package'] ?></td>
+                        <td><?= $arrival['price'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </main>
 
     <footer class="py-3 text-bg-dark">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -150,6 +151,6 @@ $arrivals = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <p class="text-center text-white"> @2024 Company, Inc</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="assets/main.js"></script>
     </body>
 </html>
